@@ -1,14 +1,13 @@
 # bun-segfault-reprod
-Steps to reprod:
 
-Install `my-dep`:
-`bun i` (to install from the tarball, not ./my-dep/)
+# Setup
 
-`bun .` will print that it is unpatched.
+- After cloning, install `my-dep`:
+- `bun i` (to install from the tarball added in package.json, not ./my-dep/)
+- `bun .` will run and print that it is unpatched.
 
-Now run `bun patch my-dep`
-Go into node_modules/my-dep and do whatever
-Then run `bun patch --commit 'node_modules/my-dep'`
+- Now run `bun patch my-dep`. Go into node_modules/my-dep and change something.
+- Then run `bun patch --commit 'node_modules/my-dep'`
 It then crashes:
 
 ```
